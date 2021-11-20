@@ -1,15 +1,19 @@
-name: Build container for ASAM Project Guide 
+# NOTE: This action is generic and can be reused without change.
+name: Build a docker image for the Dockerfile and push it to the GitHub container repository
 
 on:
   push:
     branches:
       - 'main'
     tags:
-      - 'v*'
+      - 'v*'  
+  pull_request:
+    branches:
+      - 'main'
 
 jobs: 
   docker-build:
-    name: Prepare the ASAM project guide by cloning and running pre-build scripts
+    name: Build, tag and push the container
     runs-on: ubuntu-20.04
 
     steps:
