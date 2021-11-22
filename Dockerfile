@@ -1,4 +1,4 @@
-FROM antora/antora:2.3.4
+FROM antora/antora:3.0.0-beta.2
 
 ENV DOCSEARCH_ENABLED=true \
     DOCSEARCH_ENGINE=lunr
