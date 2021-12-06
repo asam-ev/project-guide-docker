@@ -1,12 +1,12 @@
-FROM antora/antora:3.0.0-beta.2
+FROM node:17
 
-ENV DOCSEARCH_ENABLED=true \
-    DOCSEARCH_ENGINE=lunr
+WORKDIR /usr/src/app
 
-RUN yarn global add antora-site-generator-lunr@0.6.1
+COPY package.json .
+RUN npm install
 
-ENTRYPOINT ["antora", "--generator", "antora-site-generator-lunr"]
+ENV CI=true
+ENV DOCSEARCH_ENABLED=true
+ENV DOCSEARCH_ENGINE=lunr
 
-CMD ["antora-playbook.yml"]
-
-RUN yarn global add asciidoctor-kroki
+ENTRYPOINT npm run docker-build
