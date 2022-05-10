@@ -11,6 +11,7 @@ RUN npm install &&\
     apt-get install python -y &&\
     apt-get install protobuf-compiler -y &&\
     apt-get install doxygen -y &&\
+    apt install graphviz -y &&\
     wget http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz &&\
     tar xzf cmake-3.23.0.tar.gz &&\
     cd cmake-3.23.0 &&\
