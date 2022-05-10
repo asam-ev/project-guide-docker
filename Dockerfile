@@ -8,12 +8,14 @@ RUN npm install &&\
     apt-get install python3-pip -y &&\
     python3 --version &&\
     python3 -m pip install --no-cache-dir pyyaml &&\
+    apt-get install protobuf-compiler -y &&\
     wget http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz &&\
     tar xzf cmake-3.23.0.tar.gz &&\
     cd cmake-3.23.0 &&\
     ls &&\
     ./bootstrap &&\
-    make
+    make &&\
+    make install
 
 ENV CI=true
 ENV DOCSEARCH_ENABLED=true
