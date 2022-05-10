@@ -11,6 +11,8 @@ RUN npm install &&\
     wget http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz &&\
     tar xzf cmake-3.23.0.tar.gz &&\
     cd cmake-3.23.0 &&\
+    ls &&\
+    ./bootstrap &&\
     make
 
 ENV CI=true
