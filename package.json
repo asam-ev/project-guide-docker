@@ -5,7 +5,7 @@
     "clean-install": "rm -rf node_modules/ .cache/ package-lock.json ;npm run plain-install",
     "plain-install": "npm i --cache=.cache/npm --no-optional",
     "docker-build": "npm run plain-install; antora --stacktrace --fetch --clean repo/site.yml",
-    "build": "antora site.yml --stacktrace --fetch --clean"
+    "build": "antora repo/site.yml --stacktrace --fetch --clean"
   },
   "devDependencies": {
     "@antora/cli": "^3.0.0-beta.2",
