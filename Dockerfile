@@ -9,6 +9,7 @@ RUN npm install &&\
     python3 --version &&\
     python3 -m pip install --no-cache-dir pyyaml &&\
     apt-get install protobuf-compiler -y &&\
+    apt-get install doxygen -y &&\
     wget http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz &&\
     tar xzf cmake-3.23.0.tar.gz &&\
     cd cmake-3.23.0 &&\
