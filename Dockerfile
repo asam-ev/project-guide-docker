@@ -9,7 +9,7 @@ RUN npm install &&\
     python3 --version &&\
     python3 -m pip install --no-cache-dir pyyaml &&\
     wget http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz &&\
-    tar xzf cmake-2.8.3.tar.gz &&\
+    tar xzf cmake-3.23.0.tar.gz &&\
     cd cmake-3.23.0 &&\
     make
 
