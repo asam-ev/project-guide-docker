@@ -3,7 +3,8 @@
   "scripts": {
     "clean-build": "npm run clean-install;npm run build",
     "clean-install": "rm -rf node_modules/ .cache/ package-lock.json ;npm run plain-install",
-    "plain-install": "npm i --cache=.cache/npm --no-optional",
+    "plain-install": "npm i -g --cache=.cache/npm --no-optional",
+    "base-install": "npm i --cache=.cache",
     "docker-build": "npm run plain-install; antora --stacktrace --fetch --clean site.yml",
     "build": "antora site.yml --stacktrace --fetch --clean"
   },
