@@ -10,7 +10,7 @@ RUN npm install &&\
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.9 2
 RUN npm i -g @antora/cli@^3.0 @antora/site-generator@^3.0 && npm i -g @antora/lunr-extension@latest
 RUN npm i -g --save vinyl
-RUN npm i -g asciidoctor-kroki@^0.14.0 && npm i -g @djencks/asciidoctor-mathjax@^0.0.7
+RUN npm i -g asciidoctor-kroki@^0.14.0
 # RUN curl -OL https://github.com/Kitware/CMake/releases/download/v3.6.2/cmake-3.6.2.tar.gz && tar xzvf cmake-3.6.2.tar.gz
 RUN curl -OL https://sourceforge.net/projects/doxygen/files/rel-1.8.13/doxygen-1.8.13.linux.bin.tar.gz && tar xzvf doxygen-1.8.13.linux.bin.tar.gz
 # WORKDIR cmake-3.6.2
