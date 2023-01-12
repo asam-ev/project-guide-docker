@@ -13,6 +13,7 @@ RUN npm i -g --save vinyl
 RUN npm i -g -y jquery 
 RUN npm i -g -y jsdom
 RUN npm i -g asciidoctor-kroki@^0.14.0
+RUN npm i -g bibtex
 RUN curl -OL https://sourceforge.net/projects/doxygen/files/rel-1.8.13/doxygen-1.8.13.linux.bin.tar.gz && tar xzvf doxygen-1.8.13.linux.bin.tar.gz
 WORKDIR /usr/src/app/doxygen-1.8.13
 # This doxygen version on sourceforge was pushed incomplete: The Makefile.in has obsolete content that needs to be removed.
