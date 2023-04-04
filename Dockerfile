@@ -14,6 +14,8 @@ RUN npm i -g -y jquery
 RUN npm i -g -y jsdom
 RUN npm i -g asciidoctor-kroki@^0.14.0
 RUN npm i -g bibtex
+RUN npm i -g citeproc
+RUN npm i -g biblatex-csl-converter
 RUN npm i -g adm-zip
 RUN curl -OL https://sourceforge.net/projects/doxygen/files/rel-1.8.13/doxygen-1.8.13.linux.bin.tar.gz && tar xzvf doxygen-1.8.13.linux.bin.tar.gz
 WORKDIR /usr/src/app/doxygen-1.8.13
