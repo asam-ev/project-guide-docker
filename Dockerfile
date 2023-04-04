@@ -13,6 +13,7 @@ RUN npm i -g --save vinyl
 RUN npm i -g -y jquery 
 RUN npm i -g -y jsdom
 RUN npm i -g asciidoctor-kroki@^0.14.0
+RUN npm i -g xmlhttprequest
 RUN npm i -g bibtex
 RUN npm i -g citeproc
 RUN npm i -g biblatex-csl-converter
