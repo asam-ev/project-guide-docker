@@ -1,6 +1,7 @@
 FROM node:18
 
 WORKDIR /usr/src/app
+ENV NODE_PATH="/usr/local/lib/node_modules"
 
 COPY package.json .
 RUN npm install &&\
@@ -17,7 +18,6 @@ RUN npm i -g xmlhttprequest
 RUN npm i -g bibtex
 RUN npm i -g citeproc
 RUN npm i -g @citation-js/plugin-bibtex
-RUN npm i -g @citation-js/core
 RUN npm i -g adm-zip
 RUN curl -OL https://sourceforge.net/projects/doxygen/files/rel-1.8.13/doxygen-1.8.13.linux.bin.tar.gz && tar xzvf doxygen-1.8.13.linux.bin.tar.gz
 WORKDIR /usr/src/app/doxygen-1.8.13
@@ -31,7 +31,7 @@ RUN npm i -g @antora/pdf-extension
 ENV CI=true
 ENV DOCSEARCH_ENABLED=true
 ENV DOCSEARCH_ENGINE=lunr
-ENV NODE_PATH="/usr/local/lib/node_modules"
+# ENV NODE_PATH="/usr/local/lib/node_modules"
 
 # ENTRYPOINT npm run docker-build
 ENTRYPOINT /bin/bash
