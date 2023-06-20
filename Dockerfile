@@ -5,10 +5,10 @@ ENV NODE_PATH="/usr/local/lib/node_modules"
 
 COPY package.json .
 RUN npm install &&\
-    apt-get update || :  && apt-get install -y python3 software-properties-common python3-pip &&\
-    python3 -m pip install --no-cache-dir setuptools wheel pyyaml pyquery &&\
-    apt-get install -y graphviz protobuf-compiler build-essential libssl-dev cmake ruby bundler
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.9 2
+    apt-get update || :  && apt-get install -y python3-full software-properties-common python3-pip
+RUN apt install -y python3-setuptools python3-wheel python3-yaml python3-pyquery
+RUN apt-get install -y graphviz protobuf-compiler build-essential libssl-dev cmake ruby bundler
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 2
 RUN npm i -g @antora/cli@^3.0 @antora/site-generator@^3.0 && npm i -g @antora/lunr-extension@latest
 RUN npm i -g --save vinyl
 RUN npm i -g -y jquery 
