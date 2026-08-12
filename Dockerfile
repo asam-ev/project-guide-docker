@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:22
 
 WORKDIR /usr/src/app
 ENV NODE_PATH="/usr/local/lib/node_modules"
@@ -9,11 +9,13 @@ RUN npm install &&\
 RUN apt install -y python3-setuptools python3-wheel python3-yaml python3-pyquery
 RUN apt-get install -y graphviz protobuf-compiler build-essential libssl-dev cmake ruby bundler
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 2
-RUN npm i -g @antora/cli@^3.0 @antora/site-generator@^3.0 && npm i -g @antora/lunr-extension@latest
+RUN npm i -g @antora/cli@3.2.0-rc.2 @antora/site-generator@3.2.0-rc.2 @antora/site-generator-default@3.2.0-rc.2 && npm i -g @antora/lunr-extension@latest
 RUN npm i -g --save vinyl
-RUN npm i -g -y jquery 
+RUN npm i -g -y jquery
 RUN npm i -g -y jsdom
-RUN npm i -g asciidoctor-kroki@^0.14.0
+# asciidoctor-kroki v1.x.x IS NOT SUPPORTED with the ASAM Antora setup and breaks features in Antora. Check compatibility before updating
+RUN npm i -g asciidoctor-kroki@^0.18.1
+RUN npm i -g @djencks/asciidoctor-mathjax@^0.0.9
 RUN npm i -g xmlhttprequest
 RUN npm i -g bibtex
 RUN npm i -g citeproc
