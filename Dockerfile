@@ -28,7 +28,9 @@ RUN sed -i '/doxytag\|examples/d' Makefile.in
 RUN ./configure && make install
 WORKDIR /usr/src/repo
 RUN gem install asciidoctor-pdf
+RUN gem install rouge
 RUN npm i -g @antora/pdf-extension
+RUN npm i -g texsvg
 
 ENV CI=true
 ENV DOCSEARCH_ENABLED=true
